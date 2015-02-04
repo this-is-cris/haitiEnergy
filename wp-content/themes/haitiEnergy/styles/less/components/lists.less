@@ -1,0 +1,105 @@
+/*
+ *
+ * List Components
+ *
+ *
+ */
+
+.list-group {
+  margin-top:0;
+  margin-bottom: @padding-vertical;
+  padding-left: 0; // reset padding because ul and ol
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: @padding-vertical @padding-horizontal;
+  margin-bottom: -1px;
+  background-color: @list-group-bg;
+  border-top: 1px solid @list-group-border;
+  border-bottom: 1px solid @list-group-border;
+
+  // Round the first and last items
+  // &:first-child {
+  //   .border-top-radius(@list-group-border-radius);
+  // }
+
+  &:last-child {
+    margin-bottom: 0;
+    // .border-bottom-radius(@list-group-border-radius);
+  }
+}
+
+.list-group-no-padding {
+  .list-group-item {
+    padding: @padding-vertical 0;
+  }
+}
+
+a.list-group-item {
+  color: @list-group-link-color;
+
+  .list-group-item-heading {
+    color: @list-group-link-heading-color;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @list-group-link-hover-color;
+    background-color: @list-group-hover-bg;
+  }
+}
+
+.list-group-item {
+  // Disabled state
+  // &.disabled,
+  // &.disabled:hover,
+  // &.disabled:focus {
+  //   background-color: @list-group-disabled-bg;
+  //   color: @list-group-disabled-color;
+  //   cursor: @cursor-disabled;
+
+  //   // Force color to inherit for custom content
+  //   .list-group-item-heading {
+  //     color: inherit;
+  //   }
+  //   .list-group-item-text {
+  //     color: @list-group-disabled-text-color;
+  //   }
+  // }
+
+  // Active class on item itself, not parent
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    z-index: 2; // Place active items above their siblings for proper border styling
+    color: @list-group-active-color;
+    background-color: @list-group-active-bg;
+    border-color: @list-group-active-border;
+
+    // Force color to inherit for custom content
+    .list-group-item-heading,
+    .list-group-item-heading > small,
+    .list-group-item-heading > .small {
+      color: inherit;
+    }
+    .list-group-item-text {
+      color: @list-group-active-text-color;
+    }
+  }
+}
+
+//
+// Custom content options
+//
+
+.list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: @padding-vertical / 2;
+}
+.list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
