@@ -1,0 +1,17 @@
+{
+  "name": "haiti-energy",
+  "version": "0.1.0",
+  "authors": [
+    "Cris Poiata <cristinapoiata@hotmail.com>"
+  ],
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
